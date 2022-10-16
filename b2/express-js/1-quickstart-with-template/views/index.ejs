@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Mon app Express</title>
+<%- include('header') -%>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  ⚡ Bonjour <%= firstname %> ! Comment ça va ? :)
-</body>
-</html>
+    <form action="/send" method="post">
+        <label for="firstname">Votre prénom</label>
+        <input id="firstname" name="firstname" type="text">
+        <button type="submit">Go</button>
+    </form>
+
+    <ul>
+    <% for(let i = 0; i < cities.length; i++) { %>
+        <li><%= cities[i].name %> est la capitale de <%= cities[i].country %></li>
+    <% } %>
+    </ul>
+
+    <ul>
+    <% cities.forEach((city) => { %>
+        <li><%= city.name %> est la capitale de <%= city.country %></li>
+    <% }) %>
+    </ul>
+
+<%- include('footer') -%>
