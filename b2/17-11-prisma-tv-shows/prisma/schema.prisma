@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Show {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  title     String   @db.VarChar(255)
+  year      Int
+  description   String   @db.Text
+  likes     Int       @default(0)
+  seasons   Season[]
+}
+
+model Season {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  show  Show         @relation(fields: [showId], references: [id])
+  showId Int
+  episodes Episode[]
+}
+
+model Episode {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  season   Season  @relation(fields: [seasonId], references: [id])
+  seasonId Int
+}

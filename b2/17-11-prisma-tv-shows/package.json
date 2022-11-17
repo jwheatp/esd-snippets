@@ -1,0 +1,30 @@
+{
+  "name": "create-express",
+  "version": "1.0.0",
+  "description": "an express-prisma template",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwheatp/create-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwheatp/create-express/issues"
+  },
+  "homepage": "https://github.com/jwheatp/create-express#readme",
+  "dependencies": {
+    "@prisma/client": "^4.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.6.0",
+    "zod": "^3.19.1"
+  }
+}
