@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>Démo cloudinary</title>
+  </head>
+  <body>
+		<main class="container">
+			<form 
+				action="http://localhost:3000/upload"
+				method="post"
+				enctype="multipart/form-data"
+				onsubmit="sendFile(event)">
+				<label for="picture">Sélectionner une photo</label>
+				<input id="picture" name="picture" type="file">
+
+				<button type="submit">Uploader</button>
+			</form>
+		</main>
+
+		<script src="script.js"></script>
+  </body>
+</html>
